@@ -21,5 +21,6 @@ public class Node {
         this.frequency = left.frequency + right.frequency;
         this.left = left;
         this.right = right;
+        terminates = false;
     }
 }

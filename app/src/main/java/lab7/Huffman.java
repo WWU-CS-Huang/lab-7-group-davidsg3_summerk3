@@ -1,7 +1,6 @@
 package lab7;
 import java.util.HashMap;
-import heap.Heap;
-import heap.HashTable;
+import heap.*;
 
 public class Huffman {
 

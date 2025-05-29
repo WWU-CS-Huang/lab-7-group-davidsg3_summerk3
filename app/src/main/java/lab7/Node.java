@@ -7,6 +7,10 @@ public class Node {
     char letter;
     boolean terminates;
 
+    Node(char letter){
+
+    }
+
     Node(int frequency, char letter) {
         this.frequency = frequency;
         this.letter = letter;

@@ -49,6 +49,21 @@ public class Huffman {
     }
 
 
+    public String decode(String bits, CodingTree tree) {
+        StringBuilder message = new StringBuilder();
+        int i = 0;
+        int j = 1;
+        while (i < bits.length()) {
+            while (tree.decode(bits.substring(i, j)) == null) {
+                j++;
+            }
+            message.append(tree.decode(bits.substring(i, j)));
+            i = j;
+            j++;
+        }
+        return message.toString();
+    }
+
     public void makeFrequencyMap (String input){
         frequency = new HashTable<Character, Integer>();
 

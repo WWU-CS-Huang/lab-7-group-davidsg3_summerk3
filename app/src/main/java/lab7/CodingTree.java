@@ -3,7 +3,6 @@ package lab7;
 import heap.*;
 
 public class CodingTree {
-    Node head;
     HashTable<Character, String> encode;
     HashTable<String, Character> decode;
 
@@ -16,18 +15,17 @@ public class CodingTree {
             Node newGuy = new Node(heap.poll(), heap.poll());
             heap.add(newGuy, newGuy.frequency);
         }
-        head = heap.poll();
-        makeTable(head, "");
+        makeTable(heap.poll(), new StringBuilder());
     }
 
-    private void makeTable(Node node, String path) {
+    private void makeTable(Node node, StringBuilder path) {
         if (node.terminates) {
-            encode.put(node.letter, path);
-            decode.put(path, node.letter);
+            encode.put(node.letter, path.toString());
+            decode.put(path.toString(), node.letter);
         }
         else {
-            makeTable(node.left, path + "0");
-            makeTable(node.right, path + "1");
+            makeTable(node.left, path.append("0"));
+            makeTable(node.right, path.append("1"));
         }
     }
 

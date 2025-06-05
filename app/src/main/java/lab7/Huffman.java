@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import heap.*;
+import heap.HashTable;
 
 public class Huffman {
 
@@ -94,5 +95,4 @@ public class Huffman {
            }
        }
     }
-
 }

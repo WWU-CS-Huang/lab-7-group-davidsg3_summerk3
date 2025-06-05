@@ -27,7 +27,6 @@ public class Huffman {
             e.printStackTrace();
             return;
         }
-
         String string = sc.next();
 
         if(string == null){

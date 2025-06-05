@@ -3,8 +3,8 @@ package lab7;
 import heap.*;
 
 public class CodingTree {
-    HashTable<Character, String> encode;
-    HashTable<String, Character> decode;
+    HashTable<Character, String> encode = new HashTable<Character, String>();
+    HashTable<String, Character> decode = new HashTable<String, Character>();
 
     CodingTree(HashTable<Character, Integer> frequencies) {
         Heap<Node, Integer> heap = new Heap<Node, Integer>();

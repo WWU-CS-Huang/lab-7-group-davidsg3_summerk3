@@ -53,12 +53,12 @@ public class Huffman {
 
     //encodes a string and returns bits
     public String encode(String string, CodingTree codingTree){
-       String bits = "";
+       StringBuilder bits = new StringBuilder();
        for(int i = 0; i < string.length(); i++){
-          bits = bits + codingTree.encode(string.charAt(i));
+          bits.append(codingTree.encode(string.charAt(i)));
 
        }
-        return bits;
+        return bits.toString();
     }
 
     public String decode(String bits, CodingTree tree) {

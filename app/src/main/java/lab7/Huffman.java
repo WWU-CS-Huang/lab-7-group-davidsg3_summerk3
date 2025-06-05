@@ -33,13 +33,16 @@ public class Huffman {
             throw new IllegalArgumentException();
         }
 
-        //build huffMan tree
+        Huffman h = new Huffman();
+        h.makeFrequencyMap(string);
+        CodingTree codingTree = new CodingTree(h.frequency);
 
         //call encode on the string
+        String encoded = h.encode(string, codingTree);
 
         if(string.length() < 100){
-            System.out.print(string);
-            //print encoded bitstring
+            System.out.println(string);
+            System.out.println(encoded);
             //print decoded bitstring
         }
 
@@ -48,6 +51,15 @@ public class Huffman {
         //print compression ratio
     }
 
+    //encodes a string and returns bits
+    public String encode(String string, CodingTree codingTree){
+       String bits = "";
+       for(int i = 0; i < string.length(); i++){
+          bits = bits + codingTree.encode(string.charAt(i));
+
+       }
+        return bits;
+    }
 
     public void makeFrequencyMap (String input){
         frequency = new HashTable<Character, Integer>();

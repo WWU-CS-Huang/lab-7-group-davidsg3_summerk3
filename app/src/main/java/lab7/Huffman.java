@@ -27,7 +27,7 @@ public class Huffman {
             e.printStackTrace();
             return;
         }
-        String string = sc.next();
+        String string = sc.nextLine();
 
         if(string == null){
             throw new IllegalArgumentException();
@@ -51,7 +51,7 @@ public class Huffman {
         System.out.println(string.equals(decoded));
 
         //print compression ratio
-        System.out.println(string.length() / (double) encoded.length() / 8.0);
+        System.out.println(encoded.length() / (double) string.length() / 8.0);
     }
 
     //encodes a string and returns bits

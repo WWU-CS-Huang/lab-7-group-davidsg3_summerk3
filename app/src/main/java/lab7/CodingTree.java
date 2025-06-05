@@ -24,8 +24,8 @@ public class CodingTree {
             decode.put(path.toString(), node.letter);
         }
         else {
-            makeTable(node.left, path.append("0"));
-            makeTable(node.right, path.append("1"));
+            makeTable(node.left, new StringBuilder().append(path).append("0"));
+            makeTable(node.right, new StringBuilder().append(path).append("1"));
         }
     }
 
